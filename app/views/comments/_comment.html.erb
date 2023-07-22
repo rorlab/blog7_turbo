@@ -1,0 +1,5 @@
+<% if comment.persisted? %>
+  <div id="<%= dom_id comment, dom_id(comment.post) %>">
+    <%= comment.body %>
+  </div>
+<% end %>

@@ -10,3 +10,14 @@
 
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
+
+<h3>Comments</h3>
+
+
+<%= turbo_frame_tag dom_id(@post, :comments) do %>
+  <%= render partial: 'comments/comment', collection: @post.comments, as: :comment %>
+<% end %>
+
+<%= turbo_frame_tag @comment do %>
+  <%= render 'comments/form', post: @post %>
+<% end %>

@@ -1,0 +1,4 @@
+<%= form_with model: [post, post.comments.new] do |form| %>
+  <%= form.text_area :body %><br />
+  <%= form.submit %>
+<% end %>
