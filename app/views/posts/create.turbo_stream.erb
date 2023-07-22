@@ -1,0 +1,7 @@
+<%= turbo_stream.update :new_post do %>
+  <%= link_to "New post", new_post_path %>
+<% end %>
+
+<%= turbo_stream.prepend :posts do %>
+  <%= render @post %>
+<% end %>
