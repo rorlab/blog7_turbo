@@ -12,10 +12,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = @post.comment.find(params[:id])
+    @comment = @post.comments.find(params[:id])
 
     if @comment.destroy
-      response_to do |format|
+      respond_to do |format|
         format.turbo_stream
       end
     end

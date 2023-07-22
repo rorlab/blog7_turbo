@@ -1,5 +1,6 @@
 <% if comment.persisted? %>
   <div id="<%= dom_id comment, dom_id(comment.post) %>">
     <%= comment.body %>
+    <%= link_to 'x', [comment.post, comment], data: { turbo_method: :delete } %>
   </div>
 <% end %>
