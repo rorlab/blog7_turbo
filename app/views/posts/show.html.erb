@@ -19,5 +19,5 @@
 <% end %>
 
 <%= turbo_frame_tag @comment do %>
-  <%= render 'comments/form', post: @post %>
+  <%= render 'comments/form', post: @post, comment: @post.comments.new %>
 <% end %>

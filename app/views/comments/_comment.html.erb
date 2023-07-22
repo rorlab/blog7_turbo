@@ -1,6 +1,7 @@
 <% if comment.persisted? %>
   <div id="<%= dom_id comment, dom_id(comment.post) %>">
     <%= comment.body %>
-    <%= link_to 'x', [comment.post, comment], data: { turbo_method: :delete } %>
+    <%= link_to 'edit', edit_post_comment_path(comment.post, comment), data: { turbo_stream: true } %>
+    <%= link_to 'destory', [comment.post, comment], data: { turbo_method: :delete } %>
   </div>
 <% end %>

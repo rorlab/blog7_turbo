@@ -1,4 +1,5 @@
-<%= form_with model: [post, post.comments.new] do |form| %>
+<%= form_with model: [post, comment] do |form| %>
   <%= form.text_area :body %><br />
   <%= form.submit %>
+  <%= link_to "Close Form", '#' if turbo_frame_requested? %>
 <% end %>
